@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/screen_background">
+
+    <!-- Top Gradient Header (from Mockup: #BFE0FF -> #8FC7FF) -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:background="@drawable/bg_header_gradient"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/header_padding_horizontal">
+
+        <TextView
+            android:id="@+id/tvHeaderBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02"
+            android:textSize="14sp"
+            android:textColor="@color/header_text"
+            android:alpha="0.7"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/header_text"
+            android:textSize="@dimen/header_title_size"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Main Content Area with Navigation Rail and Content Panel -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!-- Left Navigation Rail (Width 104dp, Fondo #EEF6FE) -->
+        <LinearLayout
+            android:id="@+id/navigationRail"
+            android:layout_width="@dimen/navigation_rail_width"
+            android:layout_height="match_parent"
+            android:background="@color/navigation_rail_bg"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="16dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/navItemProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="PERFIL"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/navItemPhotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="FOTOS"
+                android:textSize="11sp"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/navItemVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="VIDEO"
+                android:textSize="11sp"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/navItemWeb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="WEB"
+                android:textSize="11sp"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/navItemButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="BOTONES"
+                android:textSize="11sp"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+
+        <!-- Right Content Host for Views / Screen Content -->
+        <FrameLayout
+            android:id="@+id/contentContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="16dp" />
+    </LinearLayout>
+
+</LinearLayout>

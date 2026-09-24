@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gestortareas.components.BaseView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/baseView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:headerTitle="@string/title_buttons"
+    app:badgeText="02"
+    app:showNavigationRail="true">
+
+    <!-- Scrollable container displaying the mockup button variants -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Primary Action Button (Blue Pill) -->
+            <com.gestortareas.components.AppButton
+                android:id="@+id/btnNewTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_new_task"
+                app:btnVariant="primary"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Secondary Action Button (Outline Pill) -->
+            <com.gestortareas.components.AppButton
+                android:id="@+id/btnDuplicate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_duplicate"
+                app:btnVariant="secondary"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Success Action Button (Green Pill) -->
+            <com.gestortareas.components.AppButton
+                android:id="@+id/btnUploadPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_upload_photo"
+                app:btnVariant="success"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Ghost / Discard Action Button -->
+            <com.gestortareas.components.AppButton
+                android:id="@+id/btnDiscard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_discard"
+                app:btnVariant="ghost"
+                android:layout_marginBottom="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</com.gestortareas.components.BaseView>

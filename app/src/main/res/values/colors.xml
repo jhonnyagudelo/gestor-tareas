@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Header & Brand Palette from Mockup -->
+    <color name="header_gradient_start">#BFE0FF</color>
+    <color name="header_gradient_end">#8FC7FF</color>
+    <color name="header_text">#0B2B4D</color>
+    <color name="navigation_rail_bg">#EEF6FE</color>
+
+    <!-- Button & Action Palette -->
+    <color name="btn_primary_bg">#007AFF</color>
+    <color name="btn_primary_text">#FFFFFF</color>
+    <color name="btn_secondary_border">#007AFF</color>
+    <color name="btn_secondary_text">#007AFF</color>
+    <color name="btn_success_bg">#00B050</color>
+    <color name="btn_success_text">#FFFFFF</color>
+    <color name="btn_ghost_text">#007AFF</color>
+
+    <!-- Status & Accent Colors -->
+    <color name="accent_blue">#007AFF</color>
+    <color name="accent_green">#00B050</color>
+    <color name="accent_orange">#FF9500</color>
+    <color name="accent_purple">#AF52DE</color>
+    <color name="accent_red">#FF3B30</color>
+
+    <!-- Neutral & Surfaces -->
+    <color name="screen_background">#F7FAFD</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_border">#E2EEF8</color>
+    <color name="text_primary">#0B2B4D</color>
+    <color name="text_secondary">#7A92A5</color>
+</resources>

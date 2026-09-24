@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gestor de Tareas</string>
+    <string name="title_profile">Perfil</string>
+    <string name="title_photos">Fotos</string>
+    <string name="title_video">Video</string>
+    <string name="title_web">Web</string>
+    <string name="title_buttons">Botones</string>
+
+    <string name="btn_open_panel">Abrir panel</string>
+    <string name="btn_new_task">Nueva tarea</string>
+    <string name="btn_duplicate">Duplicar</string>
+    <string name="btn_discard">Descartar</string>
+    <string name="btn_upload_photo">Subir foto</string>
+</resources>

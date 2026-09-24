@@ -39,6 +39,16 @@ La interfaz sigue los lineamientos del documento de diseño inicial:
 
 ---
 
+## 🛠️ Tecnologías y Entorno de Desarrollo
+
+- **IDE:** [Android Studio](https://developer.android.com/studio) (Hedgehog / Iguana o superior)
+- **Lenguaje:** Java 17+
+- **Plataforma:** Android SDK (minSdk: 24, targetSdk: 34)
+- **Build System:** Gradle (Kotlin DSL o Groovy DSL)
+- **Arquitectura:** MVC / Clean Architecture por capas (Componentes, Controladores, Modelos, Vistas y Recursos)
+
+---
+
 ## 🏗️ Arquitectura y Modelo de Datos (UML)
 
 El sistema está modelado bajo principios orientados a objetos y patrones de separación de responsabilidades (UI, Controladores, Modelos y Almacenamiento):
@@ -57,18 +67,43 @@ El sistema está modelado bajo principios orientados a objetos y patrones de sep
 
 ---
 
-## 📂 Estructura del Repositorio
+## 📂 Estructura del Repositorio (Android Studio)
+
+La estructura sigue el estándar oficial de proyectos Android con Gradle, organizando el código fuente en paquetes modulares:
 
 ```text
-├── docs/                   # Documentación de diseño y diagramas UML
-│   ├── mockups/            # Wireframes y pantallas de la entrega inicial
-│   └── uml/                # Diagramas de clases, secuencias, estados y actividades
-├── src/
-│   ├── assets/             # Iconos, fuentes y recursos gráficos
-│   ├── components/         # Componentes reutilizables (Riel, Tarjetas, Botones)
-│   ├── controllers/        # Controladores (TaskController, SummaryController)
-│   ├── models/             # Modelos de datos (Task, User, Media)
-│   ├── navigation/         # Enrutamiento entre secciones
-│   └── views/              # Pantallas (Perfil, Fotos, Video, Web, Controles)
+├── app/
+│   ├── build.gradle                         # Dependencias y configuración de compilación de la app
+│   └── src/main/
+│       ├── AndroidManifest.xml              # Manifiesto de la aplicación Android
+│       ├── java/com/gestortareas/
+│       │   ├── components/                  # Componentes visuales reutilizables (AppButton, BaseView, etc.)
+│       │   ├── controllers/                 # Controladores de lógica (TaskController, SummaryController)
+│       │   ├── models/                      # Modelos de datos (Task, User, Media, Session)
+│       │   ├── navigation/                  # Gestión de navegación y riel lateral
+│       │   └── views/                       # Vistas y pantallas (Profile, Photos, Video, Web, Controls)
+│       └── res/
+│           ├── drawable/                    # Selectores, fondos redondeados y degradados
+│           ├── layout/                      # Archivos de diseño XML
+│           └── values/                      # Colores, dimensiones, estilos y temas de la app
+├── docs/                                    # Documentación del proyecto
+│   ├── mockups/                             # Wireframes y especificaciones de UI/UX
+│   └── uml/                                 # Diagramas de clases, casos de uso y secuencias
+├── build.gradle                             # Configuración raíz del build
+├── settings.gradle                          # Definición de módulos del proyecto
 └── README.md
 ```
+
+---
+
+## 🚀 Cómo Abrir y Ejecutar el Proyecto
+
+1. Clona el repositorio:
+   ```bash
+   git clone <url-del-repo>
+   ```
+2. Abre **Android Studio**.
+3. Selecciona **Open** y elige la carpeta raíz del proyecto (`gestor-tareas`).
+4. Espera a que Gradle sincronice las dependencias (`Sync Project with Gradle Files`).
+5. Selecciona un emulador (se recomienda emulador con resolución base ~390 × 844 px, ej. Pixel 6 / 7) o dispositivo físico y presiona **Run** (`Shift + F10`).
+

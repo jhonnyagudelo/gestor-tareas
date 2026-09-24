@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GestorTareas" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/btn_primary_bg</item>
+        <item name="colorPrimaryVariant">@color/header_gradient_end</item>
+        <item name="colorOnPrimary">@color/btn_primary_text</item>
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/accent_green</item>
+        <item name="colorSecondaryVariant">@color/btn_success_bg</item>
+        <item name="colorOnSecondary">@color/btn_success_text</item>
+        <!-- Background and Surface -->
+        <item name="android:windowBackground">@color/screen_background</item>
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/header_gradient_start</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>
