@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="16dp">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="●  Video" android:textStyle="bold" android:textSize="20sp" />
+    <VideoView android:id="@+id/videoView" android:layout_width="match_parent" android:layout_height="220dp" android:layout_marginTop="12dp" android:background="#101820" />
+    <Button android:id="@+id/btnElegirVideo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Seleccionar video del dispositivo" />
+    <TextView android:id="@+id/tvVideoEstado" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_card" android:text="Resumen semanal\n04:12 · grabado el lunes" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_card" android:text="Onboarding del equipo   02:40" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_card" android:text="Demo de producto   07:05" />
+</LinearLayout>

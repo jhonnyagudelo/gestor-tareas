@@ -1,109 +1,25 @@
-# 📱 Gestor de Tareas — Mobile App (v0.1)
+# Gestor de Tareas - Android Java
 
-Aplicación móvil para la gestión integral de tareas, seguimiento de productividad y organización de recursos multimedia (fotos, videos y enlaces web) asociada al flujo de trabajo diario.
+Proyecto académico Android desarrollado en Java y XML a partir del mockup de la primera entrega.
 
----
+## Requisitos
+- Android Studio (JDK 17 incluido/recomendado)
+- Android SDK 35
+- Gradle/Android Gradle Plugin según archivos del proyecto
+- Dispositivo o emulador con Android 6.0 (API 23) o superior
 
-## 📌 Descripción del Proyecto
+## Ejecución
+1. Abrir la carpeta `GestorTareasAndroid` en Android Studio.
+2. Permitir que Gradle sincronice el proyecto.
+3. Instalar SDK 35 si Android Studio lo solicita.
+4. Ejecutar `app` en un emulador o dispositivo.
 
-El **Gestor de Tareas** permite a los usuarios centralizar sus actividades cotidianas, supervisar métricas de cumplimiento mediante un resumen de productividad y enriquecer cada tarea vinculando recursos digitales esenciales (documentación, capturas y material audiovisual).
+## Estructura funcional
+- `MainActivity`: contenedor y navegación lateral.
+- `PerfilFragment`: resumen de productividad y acceso al panel.
+- `FotosFragment`: selector de imágenes del dispositivo.
+- `VideoFragment`: selector y reproducción de video local.
+- `WebFragment`: apertura de enlaces en navegador.
+- `BotonesFragment`: creación, duplicado, descarte y persistencia local de una tarea.
 
-Diseñado con una arquitectura modular y una interfaz optimizada para dispositivos móviles (viewport base de 390 × 844 px).
-
----
-
-## 🚀 Características Principales
-
-- **Gestión de Tareas (CRUD):** Creación, edición, eliminación y cambio de estado de tareas.
-- **Ciclo de Vida de Tareas:** Flujo de estados estructurado (`Pending` ➔ `Process` ➔ `Complete`).
-- **Dashboard de Productividad:** Métricas en tiempo real con conteo de tareas pendientes, balance general e indicadores del día.
-- **Riel de Navegación Vertical:** Acceso rápido y persistente a 5 secciones temáticas:
-  1. 👤 **Perfil:** Resumen general de productividad, balance y acceso al panel principal.
-  2. 🖼️ **Fotos:** Galería en cuadrícula (2 columnas) para adjuntar evidencias o capturas a tareas.
-  3. 🎥 **Videos:** Reproductor integrado y lista de grabaciones vinculadas.
-  4. 🌐 **Web:** Gestor de enlaces y accesos directos a documentación o tableros externos.
-  5. 🔘 **Botones / Controles:** Panel de acciones rápidas (crear, pausar, duplicar o archivar tareas).
-
----
-
-## 📐 Diseño y UI/UX
-
-La interfaz sigue los lineamientos del documento de diseño inicial:
-
-- **Resolución base:** 390 × 844 px (borde de 12 px, radios de tarjetas de 16–22 px, botones píldora de 24 px).
-- **Tipografía:** Barlow Condensed (encabezados) y Barlow (cuerpo de texto).
-- **Paleta de Colores:**
-  - Cabecera: Degradado `#BFE0FF` a `#8FC7FF` con tipografía `#0B2B4D`.
-  - Riel vertical: Ancho de 104 px sobre fondo `#EEF6FE`.
-  - Estados visuales: Indicadores cromáticos para estados Activo, Pausado y Archivado.
-
----
-
-## 🛠️ Tecnologías y Entorno de Desarrollo
-
-- **IDE:** [Android Studio](https://developer.android.com/studio) (Hedgehog / Iguana o superior)
-- **Lenguaje:** Java 17+
-- **Plataforma:** Android SDK (minSdk: 24, targetSdk: 34)
-- **Build System:** Gradle (Kotlin DSL o Groovy DSL)
-- **Arquitectura:** MVC / Clean Architecture por capas (Componentes, Controladores, Modelos, Vistas y Recursos)
-
----
-
-## 🏗️ Arquitectura y Modelo de Datos (UML)
-
-El sistema está modelado bajo principios orientados a objetos y patrones de separación de responsabilidades (UI, Controladores, Modelos y Almacenamiento):
-
-### Modelo Conceptual (Clases Principales)
-
-- **`Usuario`:** Maneja credenciales, categoría, avatar y perfil (`edit_profile()`, `view_summary()`).
-- **`Task`:** Entidad central que encapsula título, descripción, prioridad, fecha de vencimiento (`due_date`) y estado.
-- **`Photo` / `Video` / `Website`:** Entidades multimedia asociadas en relación `0..*` a una tarea específica.
-- **`Session`:** Modela las vistas del riel de navegación (`profile`, `photos`, `video`, `website`, `buttons`).
-
-### Flujos Clave Modelados
-
-1. **Creación con Adjuntos:** Interacción coordinada entre la UI, `Controlador Tarea`, `Modelo Tarea` y capa de persistencia/almacenamiento.
-2. **Cálculo de Métricas:** Consulta del `Controlador Resumen` hacia el modelo para calcular balances de tareas completadas vs. pendientes.
-
----
-
-## 📂 Estructura del Repositorio (Android Studio)
-
-La estructura sigue el estándar oficial de proyectos Android con Gradle, organizando el código fuente en paquetes modulares:
-
-```text
-├── app/
-│   ├── build.gradle                         # Dependencias y configuración de compilación de la app
-│   └── src/main/
-│       ├── AndroidManifest.xml              # Manifiesto de la aplicación Android
-│       ├── java/com/gestortareas/
-│       │   ├── components/                  # Componentes visuales reutilizables (AppButton, BaseView, etc.)
-│       │   ├── controllers/                 # Controladores de lógica (TaskController, SummaryController)
-│       │   ├── models/                      # Modelos de datos (Task, User, Media, Session)
-│       │   ├── navigation/                  # Gestión de navegación y riel lateral
-│       │   └── views/                       # Vistas y pantallas (Profile, Photos, Video, Web, Controls)
-│       └── res/
-│           ├── drawable/                    # Selectores, fondos redondeados y degradados
-│           ├── layout/                      # Archivos de diseño XML
-│           └── values/                      # Colores, dimensiones, estilos y temas de la app
-├── docs/                                    # Documentación del proyecto
-│   ├── mockups/                             # Wireframes y especificaciones de UI/UX
-│   └── uml/                                 # Diagramas de clases, casos de uso y secuencias
-├── build.gradle                             # Configuración raíz del build
-├── settings.gradle                          # Definición de módulos del proyecto
-└── README.md
-```
-
----
-
-## 🚀 Cómo Abrir y Ejecutar el Proyecto
-
-1. Clona el repositorio:
-   ```bash
-   git clone <url-del-repo>
-   ```
-2. Abre **Android Studio**.
-3. Selecciona **Open** y elige la carpeta raíz del proyecto (`gestor-tareas`).
-4. Espera a que Gradle sincronice las dependencias (`Sync Project with Gradle Files`).
-5. Selecciona un emulador (se recomienda emulador con resolución base ~390 × 844 px, ej. Pixel 6 / 7) o dispositivo físico y presiona **Run** (`Shift + F10`).
-
+No requiere permisos de almacenamiento porque usa el selector de documentos del sistema (`ACTION_OPEN_DOCUMENT`).

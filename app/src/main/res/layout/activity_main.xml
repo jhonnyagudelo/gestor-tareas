@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
-  Plantilla base (BaseView) que incluye:
-  - Cabecera con degradado (#BFE0FF -> #8FC7FF) y título
-  - Riel de navegación vertical (104 dp)
-  - Área de contenido donde se incrustan los componentes
--->
-<com.gestortareas.components.BaseView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/baseViewTemplate"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:headerTitle="@string/app_name"
-    app:badgeText="02"
-    app:showNavigationRail="true"
-    tools:context=".views.MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#FFFFFF">
 
-    <!-- Contenedor de contenido de la plantilla -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="24dp">
+    <TextView android:id="@+id/tvAppTitle" android:layout_width="match_parent"
+        android:layout_height="64dp" android:gravity="center_vertical" android:paddingStart="20dp"
+        android:text="Gestor de Tareas" android:textStyle="bold" android:textSize="22sp"
+        android:textColor="@color/text_dark" android:background="@drawable/bg_header" />
 
-        <!-- Componente Botón reutilizable (AppButton) con estilo píldora del mockup -->
-        <com.gestortareas.components.AppButton
-            android:id="@+id/btnComponent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_open_panel"
-            app:btnVariant="primary" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="horizontal">
 
+        <LinearLayout android:layout_width="104dp" android:layout_height="match_parent"
+            android:orientation="vertical" android:background="@color/rail" android:padding="8dp">
+            <Button android:id="@+id/btnPerfil" android:layout_width="match_parent" android:layout_height="64dp" android:text="PERFIL" android:textSize="11sp" />
+            <Button android:id="@+id/btnFotos" android:layout_width="match_parent" android:layout_height="64dp" android:text="FOTOS" android:textSize="11sp" />
+            <Button android:id="@+id/btnVideo" android:layout_width="match_parent" android:layout_height="64dp" android:text="VIDEO" android:textSize="11sp" />
+            <Button android:id="@+id/btnWeb" android:layout_width="match_parent" android:layout_height="64dp" android:text="WEB" android:textSize="11sp" />
+            <Button android:id="@+id/btnBotones" android:layout_width="match_parent" android:layout_height="64dp" android:text="BOTONES" android:textSize="10sp" />
+        </LinearLayout>
+
+        <FrameLayout android:id="@+id/fragmentContainer" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1" />
     </LinearLayout>
-
-</com.gestortareas.components.BaseView>
+</LinearLayout>
